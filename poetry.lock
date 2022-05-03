@@ -740,7 +740,11 @@ optional = false
 python-versions = ">=3.8"
 
 [package.dependencies]
-numpy = {version = ">=1.21.0", markers = "python_version >= \"3.10\""}
+numpy = [
+    {version = ">=1.18.5", markers = "platform_machine != \"aarch64\" and platform_machine != \"arm64\" and python_version < \"3.10\""},
+    {version = ">=1.19.2", markers = "platform_machine == \"aarch64\" and python_version < \"3.10\""},
+    {version = ">=1.20.0", markers = "platform_machine == \"arm64\" and python_version < \"3.10\""},
+]
 python-dateutil = ">=2.8.1"
 pytz = ">=2020.1"
 
@@ -1359,8 +1363,8 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 
 [metadata]
 lock-version = "1.1"
-python-versions = "3.10.1"
-content-hash = "32c3b239c3aa4d963f4cc845e3ffd0fa50f20044c9dc1f3776c636e7339e0226"
+python-versions = "3.9.11"
+content-hash = "a8bff5701660f2e408614a7bfa43a1849347f306f196dfc4275d00daa9575b19"
 
 [metadata.files]
 altair = [
