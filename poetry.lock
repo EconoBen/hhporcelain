@@ -296,6 +296,25 @@ requests-oauthlib = ">=0.7.0"
 tool = ["click (>=6.0.0)"]
 
 [[package]]
+name = "gsheetsdb"
+version = "0.1.13.1"
+description = "Python DB-API and SQLAlchemy interface for Google Spreadsheets."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+google-auth = "*"
+moz_sql_parser = "*"
+requests = ">=2.20.0"
+six = "*"
+
+[package.extras]
+cli = ["docopt", "pygments", "prompt_toolkit (>=2)", "tabulate"]
+dev = ["coverage", "flake8", "nose", "pipreqs", "pytest (>=2.8)", "pytest-cov", "requests-mock", "twine"]
+sqlalchemy = ["sqlalchemy"]
+
+[[package]]
 name = "gspread"
 version = "5.3.2"
 description = "Google Spreadsheets Python API"
@@ -592,6 +611,76 @@ description = "The fastest markdown parser in pure Python"
 category = "main"
 optional = false
 python-versions = "*"
+
+[[package]]
+name = "mo-dots"
+version = "4.22.21108"
+description = "More Dots! Dot-access to Python dicts like Javascript"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+mo-future = "3.147.20327"
+mo-imports = "3.149.20327"
+
+[[package]]
+name = "mo-future"
+version = "3.147.20327"
+description = "More future! Make Python 2/3 compatibility a bit easier"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "mo-imports"
+version = "3.149.20327"
+description = "More Imports! - Delayed importing"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+mo-future = "3.147.20327"
+
+[[package]]
+name = "mo-kwargs"
+version = "4.22.21108"
+description = "More KWARGS! Let call parameters override kwargs"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+mo-dots = "4.22.21108"
+mo-future = "3.147.20327"
+
+[[package]]
+name = "mo-logs"
+version = "4.23.21108"
+description = "More Logs! Structured Logging and Exception Handling"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+mo-dots = "4.22.21108"
+mo-future = "3.147.20327"
+mo-imports = "3.149.20327"
+mo-kwargs = "4.22.21108"
+
+[[package]]
+name = "moz-sql-parser"
+version = "4.40.21126"
+description = "Extract Parse Tree from SQL"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+mo-dots = "4.22.21108"
+mo-future = "3.147.20327"
+mo-logs = "4.23.21108"
 
 [[package]]
 name = "nbclient"
@@ -1364,7 +1453,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "3.9.11"
-content-hash = "a8bff5701660f2e408614a7bfa43a1849347f306f196dfc4275d00daa9575b19"
+content-hash = "72d269d89d26ae5db21f47a8e7875a935d473c0801a76687c4507dafd47b8d67"
 
 [metadata.files]
 altair = [
@@ -1553,6 +1642,9 @@ google-auth-oauthlib = [
     {file = "google-auth-oauthlib-0.5.1.tar.gz", hash = "sha256:30596b824fc6808fdaca2f048e4998cc40fb4b3599eaea66d28dc7085b36c5b8"},
     {file = "google_auth_oauthlib-0.5.1-py2.py3-none-any.whl", hash = "sha256:24f67735513c4c7134dbde2f1dee5a1deb6acc8dfcb577d7bff30d213a28e7b0"},
 ]
+gsheetsdb = [
+    {file = "gsheetsdb-0.1.13.1.tar.gz", hash = "sha256:d8c20db4f1521cf5c1eebdf2eeac91a7e726ba1ec03845e8dd35cfd49feebf88"},
+]
 gspread = [
     {file = "gspread-5.3.2-py3-none-any.whl", hash = "sha256:c719e1c024a2a6f3b7d818fbe07c3886b26fd6504b64d1b1359cf242968213cd"},
     {file = "gspread-5.3.2.tar.gz", hash = "sha256:319766d90db05056293f7ee0ad2b35503a1a40683a75897a2922398cd2016283"},
@@ -1670,6 +1762,24 @@ matplotlib-inline = [
 mistune = [
     {file = "mistune-0.8.4-py2.py3-none-any.whl", hash = "sha256:88a1051873018da288eee8538d476dffe1262495144b33ecb586c4ab266bb8d4"},
     {file = "mistune-0.8.4.tar.gz", hash = "sha256:59a3429db53c50b5c6bcc8a07f8848cb00d7dc8bdb431a4ab41920d201d4756e"},
+]
+mo-dots = [
+    {file = "mo-dots-4.22.21108.tar.gz", hash = "sha256:f9f2f9a6e44e214959aecd55857b6df487b8e86daf51334e2e982d47ea33ed23"},
+]
+mo-future = [
+    {file = "mo-future-3.147.20327.tar.gz", hash = "sha256:4aafcf859e4657bc11b04ee9791321e2d44702604ae01cac7c412468cb6a513f"},
+]
+mo-imports = [
+    {file = "mo-imports-3.149.20327.tar.gz", hash = "sha256:32e3dc720c84765224d29ed7e9d6972a369d41d756e6f26ddb5b7aa01241331d"},
+]
+mo-kwargs = [
+    {file = "mo-kwargs-4.22.21108.tar.gz", hash = "sha256:9c9d00ab86f1f75013193807d90cad17cbc515384cf3b17b8aff3104a300f7ce"},
+]
+mo-logs = [
+    {file = "mo-logs-4.23.21108.tar.gz", hash = "sha256:de4136a7ce215ecbfd7a368588be0a3f1fd8a6521dc2d4aae57cc1c3ba299aab"},
+]
+moz-sql-parser = [
+    {file = "moz-sql-parser-4.40.21126.tar.gz", hash = "sha256:b3d37cc8ff118d86009aa12646791549537ec0ae8ac312efd4641289c8eee080"},
 ]
 nbclient = [
     {file = "nbclient-0.6.0-py3-none-any.whl", hash = "sha256:2eed35fc954716cdf0a01ea8cbdd9f9316761479008570059e2f5de29e139423"},
