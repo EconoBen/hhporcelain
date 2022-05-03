@@ -1,2 +1,3 @@
-hhporcelain/.streamlit/credentials.toml
-hhporcelain/.streamlit/secrets.toml
+.streamlit
+.streamlit/credentials.toml
+.streamlit/secrets.toml
