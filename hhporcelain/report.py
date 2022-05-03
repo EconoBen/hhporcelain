@@ -1,6 +1,12 @@
 import gspread_pandas
 from pandas import DataFrame
 import streamlit as st
+from google.oauth2 import service_account
+import json
+
+key_dict = json.loads(st.secrets["textkey"])
+creds = service_account.ServiceAccountCredentials.Credentials.from_service_account_info(key_dict)
+
 
 def run():
     table_options = st.selectbox("Which table would you like to view?", 
