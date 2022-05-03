@@ -34,6 +34,7 @@ def run():
     elif table_options == 'Down-the-line extras'.capitalize():
 
         # Table Two
+        tbl1_rows = [i for i, x in enumerate(df['Foundation Needs'].values) if len(set(x)) == 1][0]
         table_two_title = df.iloc[tbl1_rows:tbl1_rows+1,:1].values[0][0][0]
         tbl_two_unformatted = df.iloc[tbl1_rows+1:, :1].values
 
@@ -66,9 +67,9 @@ def run():
         st.header(tbl_three_title.capitalize())
         st.write(tbl_three)
 
-    elif table_options ==  'Purchased'.capitalize():
+    elif table_options == 'Purchased'.capitalize():
         # Table Four
-
+        tbl_three_range = [ i for i, x in enumerate(df.iloc[:,2:3].values) if x == ''][0]
         tbl_four_range = [i+1 for i, x in enumerate(df.iloc[tbl_three_range:,-1:].values) if '$' in x[0]][1]
         tbl_four_unformatted = df.iloc[tbl_four_range:,2:]
         tbl_four_title = tbl_four_unformatted.iloc[:1,:].values[0][0]
