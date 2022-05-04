@@ -37,8 +37,8 @@ def run():
         sheet_url = st.secrets["gsheets"]['sheet1']
         # Create Table One
         df = run_query(f'SELECT * FROM "{sheet_url}"')
-        df['Cost'] = df['Cost'].map('${:,.2f}'.format)
-        df['Cumulative_Cost'] = df['Cumulative_Cost'].map('${:,.2f}'.format)
+        df['Cost'] = df['Cost'].replace("$","").astype(float).map('${:,.2f}'.format)
+        df['Cumulative_Cost'] = df['Cumulative_Cost'].replace("$","").astype(float).map('${:,.2f}'.format)
 
         st.header(sheet_names[0])
         st.subheader("Data")
@@ -50,8 +50,8 @@ def run():
         sheet_url = st.secrets["gsheets"]['sheet2']
         # Create Table Two
         df = run_query(f'SELECT * FROM "{sheet_url}"')
-        df['Cost'] = df['Cost'].map('${:,.2f}'.format)
-        df['Cumulative_Cost'] = df['Cumulative_Cost'].map('${:,.2f}'.format)
+        df['Cost'] = df['Cost'].replace("$","").astype(float).map('${:,.2f}'.format)
+        df['Cumulative_Cost'] = df['Cumulative_Cost'].replace("$","").astype(float).map('${:,.2f}'.format)
 
         st.header(sheet_names[1])
         st.write(df)
@@ -60,8 +60,8 @@ def run():
         sheet_url = st.secrets["gsheets"]['sheet3']
         # Create Table Three
         df = run_query(f'SELECT * FROM "{sheet_url}"')
-        df['Cost'] = df['Cost'].map('${:,.2f}'.format)
-        df['Cumulative_Cost'] = df['Cumulative_Cost'].map('${:,.2f}'.format)
+        df['Cost'] = df['Cost'].replace("$","").astype(float).map('${:,.2f}'.format)
+        df['Cumulative_Cost'] = df['Cumulative_Cost'].replace("$","").astype(float).map('${:,.2f}'.format)
         df['Frequency'] = df['Frequency'].astype(int)
         
         
@@ -72,8 +72,8 @@ def run():
         sheet_url = st.secrets["gsheets"]['sheet4']
         # Create Table Three
         df = run_query(f'SELECT * FROM "{sheet_url}"')
-        df['Cost'] = df['Cost'].map('${:,.2f}'.format)
-        df['Cumulative_Cost'] = df['Cumulative_Cost'].map('${:,.2f}'.format)
+        df['Cost'] = df['Cost'].replace("$","").astype(float).map('${:,.2f}'.format)
+        df['Cumulative_Cost'] = df['Cumulative_Cost'].replace("$","").astype(float).map('${:,.2f}'.format)
         
         st.header(sheet_names[3])
         st.write(df)
